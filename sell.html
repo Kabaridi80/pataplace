@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>Sell Your Property in Kenya | List Houses & Land - PataPlace</title>
+    <meta name="description" content="List your property on PataPlace and reach thousands of buyers in Nairobi, Mombasa, and across Kenya. Sell land, houses, and apartments fast. Zero hidden fees.">
+    <meta name="keywords" content="sell house kenya, list property nairobi, sell land kiambu, real estate marketplace kenya, property agents kenya, pataplace seller">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.pataplace.co.ke/sell.html">
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-blue: #0f2a4a;
+            --action-orange: #ff5722;
+            --light-bg: #f8f9fa;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--light-bg);
+        }
+
+        /* Navigation */
+        .navbar { background-color: var(--primary-blue); padding: 15px 0; }
+        .navbar-brand { font-weight: 800; font-size: 1.8rem; color: white !important; }
+        .navbar-brand span { color: var(--action-orange); }
+        .nav-link { color: rgba(255,255,255,0.9) !important; margin-right: 15px; }
+        .nav-link.active { color: var(--action-orange) !important; font-weight: bold; }
+        .btn-register { background-color: var(--action-orange); color: white; border: none; }
+        .btn-login { border: 1px solid white; color: white; margin-right: 10px; }
+
+        /* Sell Hero Section */
+        .sell-hero {
+            background: linear-gradient(rgba(15, 42, 74, 0.9), rgba(15, 42, 74, 0.8)), url('https://images.unsplash.com/photo-1560520653-9e0e4c89eb11?q=80&w=1920&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            padding: 80px 0;
+            color: white;
+            text-align: center;
+        }
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 30px;
+        }
+        .hero-stat-item { text-align: center; }
+        .hero-stat-item i { color: var(--action-orange); font-size: 2rem; margin-bottom: 10px; }
+        .hero-stat-item div { font-weight: bold; font-size: 1.2rem; }
+
+        /* Listing Form */
+        .listing-form-container {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            padding: 40px;
+            margin-top: -50px; /* Overlap hero */
+            position: relative;
+            z-index: 10;
+        }
+        .form-section-title {
+            color: var(--primary-blue);
+            font-weight: 700;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            margin-top: 20px;
+        }
+        .file-upload-box {
+            border: 2px dashed #ccc;
+            border-radius: 8px;
+            padding: 40px;
+            text-align: center;
+            background: #fafafa;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .file-upload-box:hover {
+            border-color: var(--action-orange);
+            background: #fff5f2;
+        }
+
+        /* Agent Banner */
+        .agent-banner {
+            background-color: var(--primary-blue);
+            color: white;
+            padding: 60px 0;
+            margin-top: 60px;
+        }
+
+        /* Footer */
+        footer { background-color: #0a1f38; color: #ccc; padding: 60px 0 20px 0; margin-top: 60px;}
+        footer a { color: #ccc; text-decoration: none; }
+        footer a:hover { color: var(--action-orange); }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Pata<span>Place</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon" style="background-color: white; border-radius: 3px;"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="buy.html">Buy</a></li>
+                    <li class="nav-item"><a class="nav-link" href="rent.html">Rent</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="sell.html">Sell</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                </ul>
+                <div class="d-flex">
+                    <a href="login.html" class="btn btn-login">Log in</a>
+                    <a href="register.html" class="btn btn-register">Register</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="sell-hero">
+        <div class="container">
+            <h1 class="display-4 fw-bold">Sell Your Property Faster</h1>
+            <p class="lead">Get the best market price. List with Kenya's most trusted property platform.</p>
+            
+            <div class="hero-stats d-none d-md-flex">
+                <div class="hero-stat-item">
+                    <i class="fas fa-eye"></i>
+                    <div>50k+ Monthly Views</div>
+                </div>
+                <div class="hero-stat-item">
+                    <i class="fas fa-handshake"></i>
+                    <div>Verified Buyers</div>
+                </div>
+                <div class="hero-stat-item">
+                    <i class="fas fa-clock"></i>
+                    <div>Avg Sale: 30 Days</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Listing Form Section -->
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="listing-form-container">
+                    <h2 class="text-center mb-4" style="color: var(--primary-blue);">Submit Your Listing</h2>
+                    
+                    <form>
+                        <!-- Section 1: Personal Details -->
+                        <h4 class="form-section-title">1. Your Details</h4>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label class="form-label">Full Name</label>
+                                <input type="text" class="form-control" placeholder="John Doe">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Phone Number (WhatsApp)</label>
+                                <input type="tel" class="form-control" placeholder="+254 7...">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Email Address</label>
+                                <input type="email" class="form-control" placeholder="john@example.com">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Are you?</label>
+                                <select class="form-select">
+                                    <option>Property Owner (Landlord)</option>
+                                    <option>Real Estate Agent</option>
+                                    <option>Developer</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Section 2: Property Info -->
+                        <h4 class="form-section-title">2. Property Details</h4>
+                        <div class="row g-3">
+                            <div class="col-md-12">
+                                <label class="form-label">Listing Title</label>
+                                <input type="text" class="form-control" placeholder="e.g. 3 Bedroom Bungalow in Kitengela">
+                            </div>
+                            <div class="col-md-4">
+                                <label class="form-label">Property Type</label>
+                                <select class="form-select">
+                                    <option>House</option>
+                                    <option>Apartment</option>
+                                    <option>Land / Plot</option>
+                                    <option>Commercial</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4">
+                                <label class="form-label">County / Town</label>
+                                <select class="form-select">
+                                    <option>Nairobi</option>
+                                    <option>Kiambu</option>
+                                    <option>Mombasa</option>
+                                    <option>Kajiado</option>
+                                    <option>Machakos</option>
+                                    <option>Nakuru</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4">
+                                <label class="form-label">Specific Location</label>
+                                <input type="text" class="form-control" placeholder="e.g. Ruiru, near Tatu City">
+                            </div>
+                            
+                            <div class="col-md-4">
+                                <label class="form-label">Selling Price (KES)</label>
+                                <input type="number" class="form-control" placeholder="e.g. 5,000,000">
+                            </div>
+                            <div class="col-md-4">
+                                <label class="form-label">Bedrooms</label>
+                                <select class="form-select">
+                                    <option>N/A (Land)</option>
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4+</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4">
+                                <label class="form-label">Bathrooms</label>
+                                <select class="form-select">
+                                    <option>N/A</option>
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3+</option>
+                                </select>
+                            </div>
+
+                            <div class="col-md-12">
+                                <label class="form-label">Description</label>
+                                <textarea class="form-control" rows="4" placeholder="Describe the property (amenities, nearby schools, security, title deed status...)"></textarea>
+                            </div>
+                        </div>
+
+                        <!-- Section 3: Media -->
+                        <h4 class="form-section-title">3. Upload Photos</h4>
+                        <div class="file-upload-box">
+                            <i class="fas fa-cloud-upload-alt fa-3x mb-3 text-muted"></i>
+                            <h5>Drag & Drop photos here</h5>
+                            <p class="text-muted small">or click to browse files (Max 10 photos)</p>
+                            <input type="file" class="form-control d-none" id="photoUpload" multiple>
+                        </div>
+
+                        <!-- Submit -->
+                        <div class="mt-5 text-center">
+                            <div class="form-check d-inline-block mb-3">
+                                <input class="form-check-input" type="checkbox" id="terms" required>
+                                <label class="form-check-label" for="terms">
+                                    I agree to the <a href="#">Terms & Conditions</a> and certify that I own/represent this property.
+                                </label>
+                            </div>
+                            <br>
+                            <button type="submit" class="btn btn-lg w-50" style="background-color: var(--action-orange); color: white; font-weight: bold;">SUBMIT LISTING</button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- How It Works (Logic) -->
+    <section class="py-5 bg-white">
+        <div class="container">
+            <h2 class="text-center mb-5" style="color: var(--primary-blue); font-weight: 700;">How PataPlace Works</h2>
+            <div class="row text-center">
+                <div class="col-md-4 mb-4">
+                    <div class="p-4">
+                        <i class="fas fa-laptop-house fa-3x mb-3" style="color: var(--primary-blue);"></i>
+                        <h4>1. Submit Details</h4>
+                        <p class="text-muted">Fill in the form above with accurate details and high-quality photos of your property.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="p-4">
+                        <i class="fas fa-user-check fa-3x mb-3" style="color: var(--primary-blue);"></i>
+                        <h4>2. We Verify</h4>
+                        <p class="text-muted">Our team reviews your listing to ensure safety and authenticity for our buyers.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="p-4">
+                        <i class="fas fa-bullhorn fa-3x mb-3" style="color: var(--primary-blue);"></i>
+                        <h4>3. Start Selling</h4>
+                        <p class="text-muted">Your property goes live to thousands of potential buyers. You get inquiries directly.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Agent Banner (Action) -->
+    <section class="agent-banner">
+        <div class="container text-center">
+            <h2 class="fw-bold">Are you a Real Estate Agent?</h2>
+            <p class="lead mb-4">Get our Premium Agent Package. Unlimited listings, featured spots, and dedicated support.</p>
+            <button class="btn btn-light btn-lg" style="color: var(--primary-blue); font-weight: bold;">View Agent Packages</button>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-4">Frequently Asked Questions</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="accordion" id="faqAccordion">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                                    Is it free to list my property?
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Yes! The first listing is completely free for property owners. For agents with multiple properties, we offer affordable monthly packages.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                                    How long does verification take?
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    We aim to verify and approve listings within 24 hours. You may receive a call from our support team to confirm details.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingThree">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
+                                    Can I sell land without a title deed?
+                                </button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    For the safety of our buyers, we highly recommend having a Title Deed or an official Share Certificate. Listings without proper documentation may be rejected.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <h5 style="color: var(--action-orange);">PataPlace</h5>
+                    <p>Kenya's trusted marketplace for buying, selling, and renting properties.</p>
+                    <div>
+                        <a href="#" class="me-2"><i class="fab fa-facebook fa-lg"></i></a>
+                        <a href="#" class="me-2"><i class="fab fa-twitter fa-lg"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="buy.html">For Sale</a></li>
+                        <li><a href="rent.html">To Rent</a></li>
+                        <li><a href="services.html">Services</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>Major Towns</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Nairobi</a></li>
+                        <li><a href="#">Mombasa</a></li>
+                        <li><a href="#">Kisumu</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>Contact Us</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-phone me-2"></i> +254 700 000 000</li>
+                        <li><i class="fas fa-envelope me-2"></i> info@pataplace.co.ke</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-12 text-center">
+                    <p class="small">&copy; 2025 PataPlace. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Simple script to trigger file input when the box is clicked
+        document.querySelector('.file-upload-box').addEventListener('click', function() {
+            document.querySelector('#photoUpload').click();
+        });
+    </script>
+</body>
+</html>

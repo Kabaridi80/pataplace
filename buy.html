@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>Buy Property in Kenya | Houses, Apartments & Land for Sale - PataPlace</title>
+    <meta name="description" content="Search over 20+ verified properties for sale in Kenya. Find houses in Nairobi, apartments in Kilimani, land in Ruiru, and commercial properties. PataPlace is your trusted real estate partner.">
+    <meta name="keywords" content="buy house kenya, apartments for sale nairobi, land for sale kiambu, real estate kenya, pataplace, 3 bedroom house, cheap plots kenya">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.pataplace.co.ke/buy.html">
+
+    <!-- Open Graph (Social Media) -->
+    <meta property="og:title" content="Buy Property in Kenya | PataPlace">
+    <meta property="og:description" content="Find your dream home today. Browse verified listings in Nairobi, Mombasa, and Kiambu.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1560518883-ce09059ee971">
+    <meta property="og:type" content="website">
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-blue: #0f2a4a;
+            --action-orange: #ff5722;
+            --light-bg: #f8f9fa;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--light-bg);
+        }
+
+        /* Nav Consistency */
+        .navbar { background-color: var(--primary-blue); padding: 15px 0; }
+        .navbar-brand { font-weight: 800; font-size: 1.8rem; color: white !important; }
+        .navbar-brand span { color: var(--action-orange); }
+        .nav-link { color: rgba(255,255,255,0.9) !important; margin-right: 15px; }
+        .nav-link.active { color: var(--action-orange) !important; font-weight: bold; }
+        .btn-register { background-color: var(--action-orange); color: white; border: none; }
+        .btn-login { border: 1px solid white; color: white; margin-right: 10px; }
+
+        /* Filter Sidebar */
+        .filter-sidebar {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 100px;
+        }
+        .filter-title { color: var(--primary-blue); font-weight: 700; margin-bottom: 15px; }
+        
+        /* Listing Cards */
+        .listing-card {
+            background: white;
+            border: none;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+        }
+        .listing-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        }
+        .listing-img-container {
+            position: relative;
+            height: 200px;
+            overflow: hidden;
+        }
+        .listing-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        .listing-card:hover .listing-img-container img {
+            transform: scale(1.1);
+        }
+        .listing-badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: var(--action-orange);
+            color: white;
+            padding: 3px 10px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            border-radius: 4px;
+        }
+        .listing-body { padding: 20px; }
+        .listing-price {
+            color: var(--action-orange);
+            font-size: 1.4rem;
+            font-weight: 800;
+            margin-bottom: 5px;
+        }
+        .listing-title {
+            color: var(--primary-blue);
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            line-height: 1.3;
+        }
+        .listing-location {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+        .listing-features {
+            display: flex;
+            justify-content: space-between;
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+            color: #555;
+            font-size: 0.9rem;
+        }
+        .listing-features span i { color: var(--primary-blue); margin-right: 5px; }
+        
+        /* Pagination */
+        .page-link { color: var(--primary-blue); }
+        .page-item.active .page-link { background-color: var(--action-orange); border-color: var(--action-orange); }
+
+        /* Footer */
+        footer { background-color: #0a1f38; color: #ccc; padding: 60px 0 20px 0; margin-top: 50px;}
+        footer a { color: #ccc; text-decoration: none; }
+        footer a:hover { color: var(--action-orange); }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Pata<span>Place</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon" style="background-color: white; border-radius: 3px;"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link active" href="buy.html">Buy</a></li>
+                    <li class="nav-item"><a class="nav-link" href="rent.html">Rent</a></li>
+                    <li class="nav-item"><a class="nav-link" href="sell.html">Sell</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                </ul>
+                <div class="d-flex">
+                    <a href="login.html" class="btn btn-login">Log in</a>
+                    <a href="register.html" class="btn btn-register">Register</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumbs (SEO) -->
+    <div class="container mt-4">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html" style="color: var(--primary-blue);">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Buy Property</li>
+            </ol>
+        </nav>
+        <header class="mb-4">
+            <h1 style="color: var(--primary-blue); font-weight: 700;">Property for Sale in Kenya</h1>
+            <p class="text-muted">Browse 20+ verified houses, apartments, and land listings.</p>
+        </header>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container mb-5">
+        <div class="row">
+            
+            <!-- Sidebar Filter -->
+            <aside class="col-lg-3 mb-4">
+                <div class="filter-sidebar">
+                    <h5 class="filter-title"><i class="fas fa-filter me-2"></i>Filter Results</h5>
+                    <form>
+                        <div class="mb-3">
+                            <label class="form-label">Location</label>
+                            <select class="form-select">
+                                <option>All Locations</option>
+                                <option>Nairobi</option>
+                                <option>Mombasa</option>
+                                <option>Kiambu</option>
+                                <option>Kisumu</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Property Type</label>
+                            <select class="form-select">
+                                <option>Any</option>
+                                <option>Apartment</option>
+                                <option>House</option>
+                                <option>Land</option>
+                                <option>Commercial</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Min Price (KES)</label>
+                            <select class="form-select">
+                                <option>Any</option>
+                                <option>5 Million</option>
+                                <option>10 Million</option>
+                                <option>20 Million</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Bedrooms</label>
+                            <div class="btn-group w-100" role="group">
+                                <button type="button" class="btn btn-outline-secondary">1</button>
+                                <button type="button" class="btn btn-outline-secondary">2</button>
+                                <button type="button" class="btn btn-outline-secondary">3+</button>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn w-100" style="background-color: var(--action-orange); color: white;">Update Results</button>
+                    </form>
+                </div>
+            </aside>
+
+            <!-- Listings Grid -->
+            <main class="col-lg-9">
+                <div class="row g-4">
+
+                    <!-- Listing 1 -->
+                    <div class="col-md-6 col-lg-4">
+                        <article class="listing-card">
+                            <div class="listing-img-container">
+                                <span class="listing-badge">Just Listed</span>
+                                <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=500" alt="3 Bedroom Apartment for sale in Kilimani Nairobi" loading="lazy">
+                            </div>
+                            <div class="listing-body">
+                                <h5 class="listing-price">KES 18,500,000</h5>
+                                <h2 class="listing-title">Modern 3 Bed Apartment</h2>
+                                <p class="listing-location"><i class="fas fa-map-marker-alt me-1"></i> Kilimani, Nairobi</p>
+                                <div class="listing-features">
+                                    <span><i class="fas fa-bed"></i> 3</span>
+                                    <span><i class="fas fa-bath"></i> 2</span>
+                                    <span><i class="fas fa-ruler-combined"></i> 150sqm</span>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- Listing 2 -->
+                    <div class="col-md-6 col-lg-4">
+                        <article class="listing-card">
+                            <div class="listing-img-container">
+                                <img src="https://images.unsplash.com/photo-1600596542815-2495db9dc2c3?auto=format&fit=crop&q=80&w=500" alt="4 Bedroom House for sale in Runda" loading="lazy">
+                            </div>
+                            <div class="listing-body">
+                                <h5 class="listing-price">KES 85,000,000</h5>
+                                <h2 class="listing-title">Luxury 5 Bed Villa</h2>
+                                <p class="listing-location"><i class="fas fa-map-marker-alt me-1"></i> Runda, Nairobi</p>
+                                <div class="listing-features">
+                                    <span><i class="fas fa-bed"></i> 5</span>
+                                    <span><i class="fas fa-bath"></i> 5</span>
+                                    <span><i class="fas fa-tree"></i> Garden</span>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- Listing 3 -->
+                    <div class="col-md-6 col-lg-4">
+                        <article class="listing-card">
+                            <div class="listing-img-container">
+                                <span class="listing-badge bg-success">Hot Deal</span>
+                                <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&q=80&w=500" alt="Affordable 2 Bedroom apartment Ruiru" loading="lazy">
+                            </div>
+                            <div class="listing-body">
+                                <h5 class="listing-price">KES 5,500,000</h5>
+                                <h2 class="listing-title">Cozy 2 Bed Apartment</h2>
+                                <p class="listing-location"><i class="fas fa-map-marker-alt me-1"></i> Ruiru, Kiambu</p>
+                                <div class="listing-features">
+                                    <span><i class="fas fa-bed"></i> 2</span>
+                                    <span><i class="fas fa-bath"></i> 1</span>
+                                    <span><i class="fas fa-car"></i> Parking</span>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- Listing 4 -->
+                    <div class="col-md-6 col-lg-4">
+                        <article class="listing-card">
+                            <div class="listing-img-container">
+                                <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&q=80&w=500" alt="Land for sale in Juja" loading="lazy">
+                            </div>
+                            <div class="listing-body">
+                                <h5 class="listing-price">KES 2,800,000</h5>
+                                <h2 class="listing-title">50x100 Residential Plot</h2>
+                                <p class="listing-location"><i class="fas fa-map-marker-alt me-1"></i> Juja, Kalimoni</p>
+                                <div class="listing-features">
+                                    <span><i class="fas fa-layer-group"></i> Land</span>
+                                    <span><i class="fas fa-file-contract"></i> Title</span>
+                                    <span><i class="fas fa-water"></i> Water</span>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- Listing 5 -->
+                    <div class="col-md-6 col-lg-4">
+                        <article class="listing-card">
+                            <div class="listing-img-container">
+                                <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&q=80&w=500" alt="Maisonette for sale Syokimau" loading="lazy">
+                            </div>
+                            <div class="listing-body">
+                                <h5 class="listing-price">KES 14,000,000</h5>
+                                <h2 class="listing-title">4 Bed Maisonette + DSQ</h2>
+                                <p class="listing-location"><i class="fas fa-map-marker-alt me-1"></i> Syokimau, Machakos</p>
+                                <div class="listing-features">
+                                    <span><i class="fas fa-bed"></i> 4</span>
+                                    <span><i class="fas fa-bath"></i> 3</span>
+                                    <span><i class="fas fa-shield-alt"></i> Gated</span>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- Listing 6 -->
+                    <div class="col-md-6 col-lg-4">
+                        <article class="listing-card">
+                            <div class="listing-img-container">
+                                <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&q=80&w=500" alt="Apartment for sale Westlands" loading="lazy">
+                            </div>
+                            <div class="listing-body">
+                                <h5 class="listing-price">KES 22,000,000</h5>
+                                <h2 class="listing-title">Executive 3 Bed Apt</h2>
+                                <p class="listing-location"><i class="fas fa-map-marker-alt me-1"></i> Westlands, Nairobi</p>
+                                <div class="listing-features">
+                                    <span><i class="fas fa-bed"></i> 3</span>
+                                    <span><i class="fas fa-swimmer"></i> Pool</span>
+                                    <span><i class="fas fa-dumbbell"></i> Gym</span>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- Listing 7 -->
+                    <div class="col-md-6 col-lg-4">
+                        <article class="listing-card">
+                            <div class="listing-img-container">
+                                <img src="https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?auto=format&fit=crop&q=80&w=500" alt="Bungalow for sale Kitengela" loading="lazy">
+                            </div>
+                            <div class="listing-body">
+                                <h5 class="listing-price">KES 8,500,000</h5>
+                                <h2 class="listing-title">3 Bed Bungalow</h2>
+                                <p class="listing-location"><i class="fas fa-map-marker-alt me-1"></i> Kitengela, Yukos</p>
+                                <div class="listing-features">
+                                    <span><i class="fas fa-bed"></i> 3</span>
+                                    <span><i class="fas fa-bath"></i> 2</span>
+                                    <span><i class="fas fa-home"></i> Freehold</span>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- Listing 8 -->
+                    <div class="col-md-6 col-lg-4">
+                        <article class="listing-card">
+                            <div class="listing-img-container">
+                                <img src="https://images.unsplash.com/photo-1460317442991-0ec209397118?auto=format&fit=crop&q=80&w=500" alt="Apartment for sale Mombasa Nyali" loading="lazy">
+                            </div>
+                            <div class="listing-body">
+                                <h5 class="listing-price">KES 16,000,000</h5>
+                                <h2 class="listing-title">Sea View 3 Bed Apt</h2>
+                                <p class="listing-location"><i class="fas fa-map-marker-alt me-1"></i> Nyali, Mombasa</p>
+                                <div class="listing-features">
+                                    <span><i class="fas fa-bed"></i> 3</span>
+                                    <span><i class="fas fa-water"></i> Ocean View</span>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- Listing 9 -->
+                    <div class="col-md-6 col-lg-4">
+                        <article class="listing-card">
+                            <div class="listing-img-container">
+                                <img src="https://images.unsplash.com/photo-1484154218962-a1c002085d2f?auto=format&fit=crop&q=80&w=500" alt="Studio Apartment Ruaka" loading="lazy">
+                            </div>
+                            <div class="listing-body">
+                                <h5 class="listing-price">KES 3,200,000</h5>
+                                <h2 class="listing-title">Spacious Studio Apt</h2>
+                                <p class="listing-location"><i class="fas fa-map-marker-alt me-1"></i> Ruaka, Kiambu</p>
+                                <div class="listing-features">
+                                    <span><i class="fas fa-bed"></i> Studio</span>
+                                    <span><i class="fas fa-balcony"></i> Balcony</span>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- Listing 10 -->
+                    <div class="col-md-6 col-lg-4">
+                        <article class="listing-card">
+                            <div class="listing-img-container">
+                                <img src="https://images.unsplash.com/photo-1599809275372-b4036fa8334b?auto=format&fit=crop&q=80&w=500" alt="Commercial Space Nairobi CBD" loading="lazy">
+                            </div>
+                            <div class="listing-body">
+                                <h5 class="listing-price">KES 15,000,000</h5>
+                                <h2 class="listing-title">Office Suite (1000sqft)</h2>
+                                <p class="listing-location"><i class="fas fa-map-marker-alt me-1"></i> Upper Hill, Nairobi</p>
+                                <div class="listing-features">
+                                    <span><i class="fas fa-building"></i> Office</span>
+                                    <span><i class="fas fa-parking"></i> 2 Slots</span>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- Listing 11 -->
+                    <div class="col-md-6 col-lg-4">
+                        <article class="listing-card">
+                            <div class="listing-img-container">
+                                <img src="https://images.unsplash.com/photo-1593696140826-c58b021acf8b?auto=format&fit=crop&q=80&w=500" alt="House for sale Nakuru" loading="lazy">
+                            </div>
+                            <div class="listing-body">
+                                <h5 class="listing-price">KES 12,500,000</h5>
+                                <h2 class="listing-title">4 Bed Family Home</h2>
+                                <p class="listing-location"><i class="fas fa-map-marker-alt me-1"></i> Milimani, Nakuru</p>
+                                <div class="listing-features">
+                                    <span><i class="fas fa-bed"></i> 4</span>
+                                    <span><i class="fas fa-bath"></i> 3</span>
+                                    <span><i class="fas fa-tree"></i> 1/4 Acre</span>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- Listing 12 -->
+                    <div class="col-md-6 col-lg-4">
+                        <article class="listing-card">
+                            <div class="listing-img-container">
+                                <img src="https://images.unsplash.com/photo-1625602812206-5ec545ca1231?auto=format&fit=crop&q=80&w=500" alt="Apartment Kileleshwa" loading="lazy">
+                            </div>
+                            <div class="listing-body">
+                                <h5 class="listing-price">KES 24,000,000</h5>
+                                <h2 class="listing-title">Premium 3 Bed + DSQ</h2>
+                                <p class="listing-location"><i class="fas fa-map-marker-alt me-1"></i> Kileleshwa, Nairobi</p>
+                                <div class="listing-features">
+                                    <span><i class="fas fa-bed"></i> 3</span>
+                                    <span><i class="fas fa-elevator"></i> Lifts</span>
+                                    <span><i class="fas fa-bolt"></i> Generator</span>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                     <!-- Listing 13 -->
+                     <div class="col-md-6 col-lg-4">
+                        <article class="listing-card">
+                            <div class="listing-img-container">
+                                <img src="https://images.unsplash.com/photo-1513584685908-42c9e12d4490?auto=format&fit=crop&q=80&w=500" alt="Land for sale Thika" loading="lazy">
+                            </div>
+                            <div class="listing-body">
+                                <h5 class="listing-price">KES 1,800,000</h5>
+                                <h2 class="listing-title">1/8 Acre Plot (50x100)</h2>
+                                <p class="listing-location"><i class="fas fa-map-marker-alt me-1"></i> Thika Greens, Thika</p>
+                                <div class="listing-features">
+                                    <span><i class="fas fa-layer-group"></i> Gated</span>
+                                    <span><i class="fas fa-golf-ball"></i> Golf Resort</span>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- Listing 14 -->
+                    <div class="col-md-6 col-lg-4">
+                        <article class="listing-card">
+                            <div class="listing-img-container">
+                                <img src="https://images.unsplash.com/photo-1558036117-15d82a90b9b1?auto=format&fit=crop&q=80&w=500" alt="Townhouse Langata" loading="lazy">
+                            </div>
+                            <div class="listing-body">
+                                <h5 class="listing-price">KES 32,000,000</h5>
+                                <h2 class="listing-title">5 Bed Townhouse</h2>
+                                <p class="listing-location"><i class="fas fa-map-marker-alt me-1"></i> Langata, Nairobi</p>
+                                <div class="listing-features">
+                                    <span><i class="fas fa-bed"></i> 5</span>
+                                    <span><i class="fas fa-bath"></i> 4</span>
+                                    <span><i class="fas fa-shield-alt"></i> Secure</span>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- Listing 15 -->
+                    <div class="col-md-6 col-lg-4">
+                        <article class="listing-card">
+                            <div class="listing-img-container">
+                                <img src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&q=80&w=500" alt="Apartment Kisumu" loading="lazy">
+                            </div>
+                            <div class="listing-body">
+                                <h5 class="listing-price">KES 9,000,000</h5>
+                                <h2 class="listing-title">3 Bed Lakeview Apt</h2>
+                                <p class="listing-location"><i class="fas fa-map-marker-alt me-1"></i> Milimani, Kisumu</p>
+                                <div class="listing-features">
+                                    <span><i class="fas fa-bed"></i> 3</span>
+                                    <span><i class="fas fa-eye"></i> Lake View</span>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                     <!-- Listing 16 -->
+                     <div class="col-md-6 col-lg-4">
+                        <article class="listing-card">
+                            <div class="listing-img-container">
+                                <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&q=80&w=500" alt="Apartment South B" loading="lazy">
+                            </div>
+                            <div class="listing-body">
+                                <h5 class="listing-price">KES 7,800,000</h5>
+                                <h2 class="listing-title">2 Bed Apt En-suite</h2>
+                                <p class="listing-location"><i class="fas fa-map-marker-alt me-1"></i> South B, Nairobi</p>
+                                <div class="listing-features">
+                                    <span><i class="fas fa-bed"></i> 2</span>
+                                    <span><i class="fas fa-road"></i> Near CBD</span>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                     <!-- Listing 17 -->
+                     <div class="col-md-6 col-lg-4">
+                        <article class="listing-card">
+                            <div class="listing-img-container">
+                                <img src="https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&q=80&w=500" alt="Mansion Karen" loading="lazy">
+                            </div>
+                            <div class="listing-body">
+                                <h5 class="listing-price">KES 110,000,000</h5>
+                                <h2 class="listing-title">Colonial Style Mansion</h2>
+                                <p class="listing-location"><i class="fas fa-map-marker-alt me-1"></i> Karen, Nairobi</p>
+                                <div class="listing-features">
+                                    <span><i class="fas fa-bed"></i> 5</span>
+                                    <span><i class="fas fa-tree"></i> 1 Acre</span>
+                                    <span><i class="fas fa-swimmer"></i> Pool</span>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                     <!-- Listing 18 -->
+                     <div class="col-md-6 col-lg-4">
+                        <article class="listing-card">
+                            <div class="listing-img-container">
+                                <img src="https://images.unsplash.com/photo-1534353436294-0dbd4bdac845?auto=format&fit=crop&q=80&w=500" alt="Land Ongata Rongai" loading="lazy">
+                            </div>
+                            <div class="listing-body">
+                                <h5 class="listing-price">KES 1,200,000</h5>
+                                <h2 class="listing-title">50x100 Plot</h2>
+                                <p class="listing-location"><i class="fas fa-map-marker-alt me-1"></i> Ongata Rongai, Kajiado</p>
+                                <div class="listing-features">
+                                    <span><i class="fas fa-layer-group"></i> Land</span>
+                                    <span><i class="fas fa-mountain"></i> View</span>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- Listing 19 -->
+                    <div class="col-md-6 col-lg-4">
+                        <article class="listing-card">
+                            <div class="listing-img-container">
+                                <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=500" alt="Apartment Parklands" loading="lazy">
+                            </div>
+                            <div class="listing-body">
+                                <h5 class="listing-price">KES 19,000,000</h5>
+                                <h2 class="listing-title">Spacious 4 Bed Apt</h2>
+                                <p class="listing-location"><i class="fas fa-map-marker-alt me-1"></i> Parklands, Nairobi</p>
+                                <div class="listing-features">
+                                    <span><i class="fas fa-bed"></i> 4</span>
+                                    <span><i class="fas fa-mosque"></i> Near Aga Khan</span>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- Listing 20 -->
+                    <div class="col-md-6 col-lg-4">
+                        <article class="listing-card">
+                            <div class="listing-img-container">
+                                <img src="https://images.unsplash.com/photo-1599427303058-f84304c7c429?auto=format&fit=crop&q=80&w=500" alt="House Ngong" loading="lazy">
+                            </div>
+                            <div class="listing-body">
+                                <h5 class="listing-price">KES 11,000,000</h5>
+                                <h2 class="listing-title">4 Bed Maisonette</h2>
+                                <p class="listing-location"><i class="fas fa-map-marker-alt me-1"></i> Ngong, Kajiado</p>
+                                <div class="listing-features">
+                                    <span><i class="fas fa-bed"></i> 4</span>
+                                    <span><i class="fas fa-wind"></i> Wind Farm View</span>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                </div>
+
+                <!-- Pagination (SEO Best Practice) -->
+                <nav aria-label="Page navigation" class="mt-5">
+                    <ul class="pagination justify-content-center">
+                        <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                    </ul>
+                </nav>
+            </main>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <h5 style="color: var(--action-orange);">PataPlace</h5>
+                    <p>Kenya's trusted marketplace for buying, selling, and renting properties.</p>
+                    <div>
+                        <a href="#" class="me-2"><i class="fab fa-facebook fa-lg"></i></a>
+                        <a href="#" class="me-2"><i class="fab fa-twitter fa-lg"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="buy.html">For Sale</a></li>
+                        <li><a href="#">To Rent</a></li>
+                        <li><a href="#">Commercial</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>Major Locations</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Nairobi</a></li>
+                        <li><a href="#">Mombasa</a></li>
+                        <li><a href="#">Kiambu</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>Contact Us</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-phone me-2"></i> +254 700 000 000</li>
+                        <li><i class="fas fa-envelope me-2"></i> info@pataplace.co.ke</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-12 text-center">
+                    <p class="small">&copy; 2025 PataPlace. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- SCHEMA MARKUP (Essential for Real Estate SEO) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "RealEstateListing",
+            "name": "Modern 3 Bed Apartment",
+            "image": "https://images.unsplash.com/photo-1512917774080-9991f1c4c750",
+            "description": "3 Bedroom Apartment for sale in Kilimani, Nairobi",
+            "url": "https://www.pataplace.co.ke/property/1",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "KES",
+              "price": "18500000"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@type": "RealEstateListing",
+            "name": "Luxury 5 Bed Villa",
+            "image": "https://images.unsplash.com/photo-1600596542815-2495db9dc2c3",
+            "description": "5 Bedroom House for sale in Runda, Nairobi",
+            "url": "https://www.pataplace.co.ke/property/2",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "KES",
+              "price": "85000000"
+            }
+          }
+        }
+      ]
+    }
+    </script>
+</body>
+</html>

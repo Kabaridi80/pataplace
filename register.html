@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account | PataPlace</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-blue: #0f2a4a;
+            --action-orange: #ff5722;
+            --light-bg: #f8f9fa;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--light-bg);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Navigation */
+        .navbar { background-color: var(--primary-blue); padding: 15px 0; }
+        .navbar-brand { font-weight: 800; font-size: 1.8rem; color: white !important; }
+        .navbar-brand span { color: var(--action-orange); }
+        .btn-login-nav { 
+            border: 1px solid white; 
+            color: white; 
+            font-weight: 500;
+            transition: 0.3s;
+        }
+        .btn-login-nav:hover { background-color: white; color: var(--primary-blue); }
+
+        /* Register Container */
+        .register-wrapper {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 0;
+        }
+        .register-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 1100px;
+        }
+        
+        /* Left Side - Image */
+        .register-image {
+            background: url('https://images.unsplash.com/photo-1560518883-ce09059ee971?q=80&w=1000&auto=format&fit=crop') no-repeat center center;
+            background-size: cover;
+            position: relative;
+            min-height: 600px;
+        }
+        .register-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(15, 42, 74, 0.4), rgba(15, 42, 74, 0.9));
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 40px;
+            color: white;
+            text-align: center;
+        }
+        .register-overlay h2 { font-weight: 800; margin-bottom: 15px; }
+
+        /* Right Side - Form */
+        .register-form-section {
+            padding: 40px 50px;
+        }
+        .form-floating:focus-within { border-color: var(--action-orange); }
+        
+        /* Custom Tabs for User Type */
+        .nav-pills .nav-link {
+            color: #555;
+            background-color: #f1f1f1;
+            margin-right: 10px;
+            font-weight: 600;
+            border-radius: 8px;
+            width: 100%;
+            text-align: center;
+        }
+        .nav-pills .nav-link.active {
+            background-color: var(--primary-blue);
+            color: white;
+        }
+        .nav-item { flex: 1; }
+
+        .btn-register-submit {
+            background-color: var(--action-orange);
+            color: white;
+            padding: 12px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: 0.3s;
+            border: none;
+        }
+        .btn-register-submit:hover {
+            background-color: #e64a19;
+            color: white;
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 768px) {
+            .register-image { display: none; }
+            .register-form-section { padding: 30px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Simplified Navigation -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Pata<span>Place</span></a>
+            <div class="ms-auto">
+                <span class="text-white me-3 d-none d-md-inline">Already have an account?</span>
+                <a href="login.html" class="btn btn-login-nav btn-sm px-4">Log In</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="register-wrapper">
+        <div class="container">
+            <div class="row register-card g-0">
+                
+                <!-- Left Side: Visual/Emotion -->
+                <div class="col-md-5 register-image d-none d-md-block">
+                    <div class="register-overlay">
+                        <h2>Join PataPlace</h2>
+                        <p class="lead">Whether you are finding your dream home or selling your first property, your journey starts here.</p>
+                        <hr style="width: 50px; margin: 20px auto; opacity: 1;">
+                        <ul class="list-unstyled text-start d-inline-block">
+                            <li class="mb-2"><i class="fas fa-check-circle text-warning me-2"></i> Save your favorite listings</li>
+                            <li class="mb-2"><i class="fas fa-check-circle text-warning me-2"></i> Get price drop alerts</li>
+                            <li class="mb-2"><i class="fas fa-check-circle text-warning me-2"></i> Connect with verified agents</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Right Side: Logic/Form -->
+                <div class="col-md-7 register-form-section">
+                    <h3 class="mb-4 fw-bold" style="color: var(--primary-blue);">Create Account</h3>
+                    
+                    <!-- Account Type Tabs -->
+                    <ul class="nav nav-pills mb-4" id="pills-tab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="pills-user-tab" data-bs-toggle="pill" data-bs-target="#pills-user" type="button" role="tab">I am a Buyer / Tenant</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="pills-agent-tab" data-bs-toggle="pill" data-bs-target="#pills-agent" type="button" role="tab">I am an Agent / Landlord</button>
+                        </li>
+                    </ul>
+
+                    <div class="tab-content" id="pills-tabContent">
+                        
+                        <!-- USER FORM -->
+                        <div class="tab-pane fade show active" id="pills-user" role="tabpanel">
+                            <form>
+                                <div class="row g-2">
+                                    <div class="col-md-6">
+                                        <div class="form-floating mb-3">
+                                            <input type="text" class="form-control" placeholder="First Name">
+                                            <label>First Name</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-floating mb-3">
+                                            <input type="text" class="form-control" placeholder="Last Name">
+                                            <label>Last Name</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-floating mb-3">
+                                    <input type="email" class="form-control" placeholder="name@example.com">
+                                    <label>Email Address</label>
+                                </div>
+
+                                <div class="form-floating mb-3">
+                                    <input type="tel" class="form-control" placeholder="0700...">
+                                    <label>Phone Number</label>
+                                </div>
+
+                                <div class="form-floating mb-3 position-relative">
+                                    <input type="password" class="form-control" id="passUser" placeholder="Password">
+                                    <label>Password</label>
+                                    <i class="fas fa-eye position-absolute top-50 end-0 translate-middle-y me-3 text-muted" style="cursor: pointer;" onclick="togglePass('passUser')"></i>
+                                </div>
+
+                                <div class="form-check mb-4">
+                                    <input class="form-check-input" type="checkbox" id="termsUser" required>
+                                    <label class="form-check-label small text-muted" for="termsUser">
+                                        I agree to the <a href="#" class="text-decoration-none">Terms of Service</a> and <a href="#" class="text-decoration-none">Privacy Policy</a>.
+                                    </label>
+                                </div>
+
+                                <button type="submit" class="btn btn-register-submit w-100 mb-3">CREATE ACCOUNT</button>
+                            </form>
+                        </div>
+
+                        <!-- AGENT FORM -->
+                        <div class="tab-pane fade" id="pills-agent" role="tabpanel">
+                            <form>
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" placeholder="Agency Name">
+                                    <label>Agency / Business Name</label>
+                                </div>
+                                
+                                <div class="row g-2">
+                                    <div class="col-md-6">
+                                        <div class="form-floating mb-3">
+                                            <input type="text" class="form-control" placeholder="First Name">
+                                            <label>Contact Person First Name</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-floating mb-3">
+                                            <input type="text" class="form-control" placeholder="Last Name">
+                                            <label>Last Name</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-floating mb-3">
+                                    <input type="email" class="form-control" placeholder="name@example.com">
+                                    <label>Business Email</label>
+                                </div>
+
+                                <div class="form-floating mb-3">
+                                    <input type="tel" class="form-control" placeholder="0700...">
+                                    <label>Phone Number (WhatsApp)</label>
+                                </div>
+
+                                <div class="form-floating mb-3 position-relative">
+                                    <input type="password" class="form-control" id="passAgent" placeholder="Password">
+                                    <label>Password</label>
+                                    <i class="fas fa-eye position-absolute top-50 end-0 translate-middle-y me-3 text-muted" style="cursor: pointer;" onclick="togglePass('passAgent')"></i>
+                                </div>
+
+                                <div class="form-check mb-4">
+                                    <input class="form-check-input" type="checkbox" id="termsAgent" required>
+                                    <label class="form-check-label small text-muted" for="termsAgent">
+                                        I agree to the Agent <a href="#" class="text-decoration-none">Terms of Service</a>.
+                                    </label>
+                                </div>
+
+                                <button type="submit" class="btn btn-register-submit w-100 mb-3">REGISTER AS AGENT</button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- Social Sign up -->
+                    <div class="text-center mt-2">
+                        <p class="small text-muted mb-3">Or sign up with</p>
+                        <button class="btn btn-outline-secondary btn-sm me-2"><i class="fab fa-google text-danger"></i> Google</button>
+                        <button class="btn btn-outline-secondary btn-sm"><i class="fab fa-facebook text-primary"></i> Facebook</button>
+                    </div>
+                    
+                    <div class="mt-4 text-center d-md-none">
+                        <p class="text-muted">Already have an account? <a href="login.html" style="color: var(--action-orange);">Log in</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Minimal Footer -->
+    <footer class="py-3 text-center" style="background-color: var(--primary-blue); color: #ccc;">
+        <div class="container">
+            <p class="small m-0">&copy; 2025 PataPlace. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Password Toggle Script -->
+    <script>
+        function togglePass(id) {
+            const input = document.getElementById(id);
+            if (input.type === "password") {
+                input.type = "text";
+            } else {
+                input.type = "password";
+            }
+        }
+    </script>
+</body>
+</html>
