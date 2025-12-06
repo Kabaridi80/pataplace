@@ -6,101 +6,26 @@
     
     <!-- SEO Meta Tags -->
     <title>Sell Your Property in Kenya | List Houses & Land - PataPlace</title>
-    <meta name="description" content="List your property on PataPlace and reach thousands of buyers in Nairobi, Mombasa, and across Kenya. Sell land, houses, and apartments fast. Zero hidden fees.">
-    <meta name="keywords" content="sell house kenya, list property nairobi, sell land kiambu, real estate marketplace kenya, property agents kenya, pataplace seller">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://www.pataplace.co.ke/sell.html">
-
+    <meta name="description" content="List your property on PataPlace and reach thousands of buyers in Nairobi, Mombasa, and across Kenya. Sell land, houses, and apartments fast.">
+    
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
     
-    <style>
-        :root {
-            --primary-blue: #0f2a4a;
-            --action-orange: #ff5722;
-            --light-bg: #f8f9fa;
+    <!-- SECURITY SCRIPT: CHECK LOGIN STATUS -->
+    <script>
+        // Check if user is logged in immediately when page loads
+        const user = localStorage.getItem('pataPlaceUser');
+        
+        if (!user) {
+            // If no user is found, redirect immediately to login
+            alert("Please Log In or Register to list a property.");
+            window.location.href = 'login.html';
         }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--light-bg);
-        }
-
-        /* Navigation */
-        .navbar { background-color: var(--primary-blue); padding: 15px 0; }
-        .navbar-brand { font-weight: 800; font-size: 1.8rem; color: white !important; }
-        .navbar-brand span { color: var(--action-orange); }
-        .nav-link { color: rgba(255,255,255,0.9) !important; margin-right: 15px; }
-        .nav-link.active { color: var(--action-orange) !important; font-weight: bold; }
-        .btn-register { background-color: var(--action-orange); color: white; border: none; }
-        .btn-login { border: 1px solid white; color: white; margin-right: 10px; }
-
-        /* Sell Hero Section */
-        .sell-hero {
-            background: linear-gradient(rgba(15, 42, 74, 0.9), rgba(15, 42, 74, 0.8)), url('https://images.unsplash.com/photo-1560520653-9e0e4c89eb11?q=80&w=1920&auto=format&fit=crop');
-            background-size: cover;
-            background-position: center;
-            padding: 80px 0;
-            color: white;
-            text-align: center;
-        }
-        .hero-stats {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            margin-top: 30px;
-        }
-        .hero-stat-item { text-align: center; }
-        .hero-stat-item i { color: var(--action-orange); font-size: 2rem; margin-bottom: 10px; }
-        .hero-stat-item div { font-weight: bold; font-size: 1.2rem; }
-
-        /* Listing Form */
-        .listing-form-container {
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            padding: 40px;
-            margin-top: -50px; /* Overlap hero */
-            position: relative;
-            z-index: 10;
-        }
-        .form-section-title {
-            color: var(--primary-blue);
-            font-weight: 700;
-            border-bottom: 2px solid #eee;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-            margin-top: 20px;
-        }
-        .file-upload-box {
-            border: 2px dashed #ccc;
-            border-radius: 8px;
-            padding: 40px;
-            text-align: center;
-            background: #fafafa;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-        .file-upload-box:hover {
-            border-color: var(--action-orange);
-            background: #fff5f2;
-        }
-
-        /* Agent Banner */
-        .agent-banner {
-            background-color: var(--primary-blue);
-            color: white;
-            padding: 60px 0;
-            margin-top: 60px;
-        }
-
-        /* Footer */
-        footer { background-color: #0a1f38; color: #ccc; padding: 60px 0 20px 0; margin-top: 60px;}
-        footer a { color: #ccc; text-decoration: none; }
-        footer a:hover { color: var(--action-orange); }
-    </style>
+    </script>
 </head>
 <body>
 
@@ -118,9 +43,10 @@
                     <li class="nav-item"><a class="nav-link active" href="sell.html">Sell</a></li>
                     <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
                 </ul>
-                <div class="d-flex">
-                    <a href="login.html" class="btn btn-login">Log in</a>
-                    <a href="register.html" class="btn btn-register">Register</a>
+                <!-- User Profile / Logout Section -->
+                <div class="d-flex align-items-center">
+                    <span class="text-white me-3 d-none d-lg-block" id="welcomeMsg" style="font-weight: 500;">Welcome, Member</span>
+                    <button onclick="logout()" class="btn btn-outline-light btn-sm">Log Out</button>
                 </div>
             </div>
         </div>
@@ -156,9 +82,9 @@
                 <div class="listing-form-container">
                     <h2 class="text-center mb-4" style="color: var(--primary-blue);">Submit Your Listing</h2>
                     
-                    <form>
+                    <form onsubmit="handleUpload(event)">
                         <!-- Section 1: Personal Details -->
-                        <h4 class="form-section-title">1. Your Details</h4>
+                        <h4 class="form-section-title" style="color: var(--primary-blue); border-bottom: 2px solid #eee; padding-bottom: 10px; margin-bottom: 20px;">1. Your Details</h4>
                         <div class="row g-3">
                             <div class="col-md-6">
                                 <label class="form-label">Full Name</label>
@@ -170,7 +96,7 @@
                             </div>
                             <div class="col-md-6">
                                 <label class="form-label">Email Address</label>
-                                <input type="email" class="form-control" placeholder="john@example.com">
+                                <input type="email" class="form-control" id="sellerEmail" readonly> <!-- Auto-filled by script -->
                             </div>
                             <div class="col-md-6">
                                 <label class="form-label">Are you?</label>
@@ -183,7 +109,7 @@
                         </div>
 
                         <!-- Section 2: Property Info -->
-                        <h4 class="form-section-title">2. Property Details</h4>
+                        <h4 class="form-section-title" style="color: var(--primary-blue); border-bottom: 2px solid #eee; padding-bottom: 10px; margin-bottom: 20px; margin-top: 30px;">2. Property Details</h4>
                         <div class="row g-3">
                             <div class="col-md-12">
                                 <label class="form-label">Listing Title</label>
@@ -245,11 +171,16 @@
                         </div>
 
                         <!-- Section 3: Media -->
-                        <h4 class="form-section-title">3. Upload Photos</h4>
-                        <div class="file-upload-box">
+                        <h4 class="form-section-title" style="color: var(--primary-blue); border-bottom: 2px solid #eee; padding-bottom: 10px; margin-bottom: 20px; margin-top: 30px;">3. Upload Photos</h4>
+                        
+                        <div class="alert alert-info small">
+                            <i class="fas fa-info-circle"></i> Images will be uploaded to our Secure Cloud Storage.
+                        </div>
+
+                        <div class="file-upload-box" onclick="document.getElementById('photoUpload').click()">
                             <i class="fas fa-cloud-upload-alt fa-3x mb-3 text-muted"></i>
-                            <h5>Drag & Drop photos here</h5>
-                            <p class="text-muted small">or click to browse files (Max 10 photos)</p>
+                            <h5>Click to Upload Photos</h5>
+                            <p class="text-muted small">Max 10 photos. Supported: JPG, PNG</p>
                             <input type="file" class="form-control d-none" id="photoUpload" multiple>
                         </div>
 
@@ -332,22 +263,10 @@
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="headingTwo">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
-                                    How long does verification take?
-                                </button>
-                            </h2>
-                            <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                                <div class="accordion-body">
-                                    We aim to verify and approve listings within 24 hours. You may receive a call from our support team to confirm details.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingThree">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
                                     Can I sell land without a title deed?
                                 </button>
                             </h2>
-                            <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                                 <div class="accordion-body">
                                     For the safety of our buyers, we highly recommend having a Title Deed or an official Share Certificate. Listings without proper documentation may be rejected.
                                 </div>
@@ -406,11 +325,48 @@
     <!-- Bootstrap JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
+    <!-- LOGIC SCRIPT: Handle User Data & Upload Simulation -->
     <script>
-        // Simple script to trigger file input when the box is clicked
-        document.querySelector('.file-upload-box').addEventListener('click', function() {
-            document.querySelector('#photoUpload').click();
-        });
+        // 1. Display User Name & Auto-fill Email
+        const userData = JSON.parse(localStorage.getItem('pataPlaceUser'));
+        
+        if(userData && userData.email) {
+            // Update Welcome message
+            document.getElementById('welcomeMsg').innerText = "Hello, " + userData.email.split('@')[0];
+            // Auto-fill email field in form
+            const emailField = document.getElementById('sellerEmail');
+            if(emailField) {
+                emailField.value = userData.email;
+            }
+        }
+
+        // 2. Logout Function
+        function logout() {
+            localStorage.removeItem('pataPlaceUser');
+            window.location.href = 'index.html';
+        }
+
+        // 3. Handle Form Submission (Simulation)
+        function handleUpload(e) {
+            e.preventDefault();
+            const fileInput = document.getElementById('photoUpload');
+            
+            if(fileInput.files.length === 0) {
+                alert("Please select at least one photo.");
+                return;
+            }
+
+            // Simulate upload delay
+            const btn = e.target.querySelector('button[type="submit"]');
+            const originalText = btn.innerText;
+            btn.innerText = "Uploading...";
+            btn.disabled = true;
+
+            setTimeout(() => {
+                alert("Success! Listing submitted. Images are being uploaded to Cloud Storage.");
+                window.location.href = 'index.html'; // Redirect to home after success
+            }, 2000);
+        }
     </script>
 </body>
 </html>
