@@ -299,10 +299,75 @@
     </footer>
 
     <!-- Bootstrap JS Bundle -->
+    <script>
+        // 1. Function to fetch and display properties
+        async function loadKejaHubProperties() {
+            try {
+                // Fetch data from your Express backend
+                const response = await fetch('http://localhost:5000/api/properties/all');
+                const properties = await response.json();
+
+                const listingsContainer = document.getElementById('listings');
+                
+                // Clear the static placeholder cards
+                listingsContainer.innerHTML = '';
+
+                if (properties.length === 0) {
+                    listingsContainer.innerHTML = '<div class="col-12 text-center"><p>No properties found yet. Be the first to list!</p></div>';
+                    return;
+                }
+
+                // Loop through your MongoDB data and create cards
+                properties.forEach(property => {
+                    listingsContainer.innerHTML += `
+                        <div class="col-md-6 mb-4">
+                            <div class="card h-100 shadow-sm">
+                                <img src="${property.image || 'https://via.placeholder.com/400x300?text=KejaHub+Property'}" class="card-img-top" alt="${property.title}">
+                                <div class="card-body">
+                                    <h5 class="card-title">${property.title}</h5>
+                                    <p class="card-text">Location: ${property.location}</p>
+                                    <p class="fw-bold text-primary">KES ${property.price.toLocaleString()}</p>
+                                    <a href="property-details.html?id=${property._id}" class="btn btn-primary btn-sm">
+                                        View Details
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                });
+            } catch (error) {
+                console.error("Error connecting to KejaHub backend:", error);
+                document.getElementById('listings').innerHTML = '<p class="text-danger text-center">Unable to load properties. Ensure your server is running on port 5000.</p>';
+            }
+        }
+
+        // 2. Handle the Search Form
+        const searchForm = document.querySelector('.search-box form');
+        searchForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const cityInput = searchForm.querySelector('input[type="text"]').value;
+            const typeSelect = searchForm.querySelector('select').value;
+
+            try {
+                const response = await fetch(`http://localhost:5000/api/properties/search?city=${cityInput}&type=${typeSelect}`);
+                const searchResults = await response.json();
+                
+                // Reuse the logic to display filtered results
+                displayProperties(searchResults); 
+            } catch (error) {
+                console.error("Search failed:", error);
+            }
+        });
+
+        // Run on page load
+        window.onload = loadKejaHubProperties;
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
+
 
 
 
